@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,8 +12,6 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-
-
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
@@ -25,35 +24,60 @@ class _HomeState extends State<Home> {
           IconButton(
             icon: Icon(Icons.refresh),
             onPressed: () {},
+            iconSize: 30,
           )
         ],
       ),
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Icon(Icons.person_pin, size: 120, color: Colors.green),
-          TextField(
-            keyboardType: TextInputType.number,
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.green),
-            decoration: InputDecoration(
-                labelText: "Peso (kg):",
-                labelStyle: TextStyle(color: Colors.green)),
-          ),
-          TextField(
-            keyboardType: TextInputType.number,
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.green),
-            decoration: InputDecoration(
-                labelText: "Altura (cm):",
-                labelStyle: TextStyle(color: Colors.green)),
-          ),
-          RaisedButton(
-            onPressed: () {},
-            child: Text("Calcular"),
-          )
-        ],
+      body: SingleChildScrollView(
+        padding: EdgeInsets.fromLTRB(15, 15, 15, 5),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Icon(Icons.person_pin, size: 120, color: Colors.green),
+            TextField(
+              keyboardType: TextInputType.number,
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.green),
+              decoration: InputDecoration(
+                  labelText: "Peso (kg):",
+                  labelStyle: TextStyle(color: Colors.green, fontSize: 25)),
+            ),
+            TextField(
+              keyboardType: TextInputType.number,
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.green),
+              decoration: InputDecoration(
+                  labelText: "Altura (cm):",
+                  labelStyle: TextStyle(color: Colors.green, fontSize: 25)),
+            ),
+
+            Padding(
+              padding: EdgeInsets.all(15),
+              child:
+              Container(
+                  height: 50.0,
+                  child: RaisedButton(
+                    onPressed: () {},
+                    child: Text("Calcular",
+                        style: TextStyle(color: Colors.white, fontSize: 25)),
+                    color: Colors.green,
+                  )),
+
+            ),
+
+
+            Padding(
+              padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
+              child: Text(
+                "Info",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.green, fontSize: 25),
+              ),
+            )
+
+          ],
+        ),
       ),
     );
   }
